@@ -2,9 +2,30 @@
     background-color: rgba(218, 223, 225, 0.5);
 }
 
+
 .page-title-box .page-title-right{
     float: right;
     margin-top: 20px;
+}
+
+.page-title-box .page-title {
+    font-size: 18px;
+    margin: 0;
+    line-height: 75px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #6C757D;
+}
+
+.btn-success {
+    box-shadow: 0 2px 6px 0 rgba(10,207,151,.5) !important;
+}
+
+.btn-success {
+    color: #fff !important;
+    background-color: #0acf97 !important;
+    border-color: #0acf97 !important;
 }
 
 .widget-flat {
@@ -12,10 +33,25 @@
     overflow: hidden;
 }
 
+.content-page {
+    margin-left: 260px;
+    overflow: hidden;
+    padding: 70px 12px 65px;
+    min-height: 100vh;
+}
+
 .card {
     border: none !important;
     box-shadow: 0 0 35px 0 rgba(154,161,171,.15) !important;
     margin-bottom: 24px !important;
+}
+
+.text-muted {
+    color: #98a6ad!important;
+}
+
+.font-weight-normal {
+    font-weight: 400!important;
 }
 
 body{
