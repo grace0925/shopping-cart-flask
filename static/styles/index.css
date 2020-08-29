@@ -1,0 +1,28 @@
+.white-background{
+    background-color: rgba(218, 223, 225, 0.5);
+}
+
+.page-title-box .page-title-right{
+    float: right;
+    margin-top: 20px;
+}
+
+.widget-flat {
+    position: relative;
+    overflow: hidden;
+}
+
+.card {
+    border: none !important;
+    box-shadow: 0 0 35px 0 rgba(154,161,171,.15) !important;
+    margin-bottom: 24px !important;
+}
+
+body{
+    background-color: #fafbfe !important;
+    font-size: .9rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #161616 !important;
+    text-align: left !important;
+}
