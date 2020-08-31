@@ -1,10 +1,9 @@
-from flask import Flask, render_template
-from flask_mysqldb import MySQL
-from flask import request, redirect
-app = Flask(__name__)
+from flask import render_template, request, redirect, make_response, url_for, flash
+from flask import current_app as app
+from .models import db, Item
 
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def home():
     return render_template("index.html")
 
@@ -21,7 +20,13 @@ def add_item():
         unit_string = handle_unit(int(units))
         print('name: ', name, ' quantity: ', quantity, ' unit: ', unit_string)
 
-        return redirect(request.url)
+        new_item = Item(name, quantity, unit_string)
+        db.session.add(new_item)
+        db.session.commit()
+
+        flash("Successfully created and stored new item!")
+
+        return redirect(url_for('home'))
     return render_template("index.html")
 
 
@@ -36,7 +41,3 @@ def handle_unit(units):
         7: "bag"
     }
     return switcher.get(units, "Invalid unit")
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
