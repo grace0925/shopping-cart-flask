@@ -13,11 +13,14 @@ def home():
 def add_item():
     if request.method == "POST":
         req = request.form
+
         name = req["name"]
         quantity = req["quantity"]
         units = req["unit"]
+
         unit_string = handle_unit(int(units))
         print('name: ', name, ' quantity: ', quantity, ' unit: ', unit_string)
+
         return redirect(request.url)
     return render_template("index.html")
 
