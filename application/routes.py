@@ -50,10 +50,21 @@ def edit_item():
         item.item_unit = unit_string
 
         db.session.commit()
-        flash("Successfully updated item #")
+        flash("Successfully updated item!")
 
         return redirect(url_for('home'))
     return render_template("index.html")
+
+
+@app.route('/delete/<id>', methods=['GET', 'POST'])
+def delete_item(id):
+    item = Item.query.get(id)
+    db.session.delete(item)
+    db.session.commit()
+
+    flash("Successfully deleted item!")
+
+    return redirect(url_for('home'))
 
 
 def handle_unit(units):
