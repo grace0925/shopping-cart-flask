@@ -107,6 +107,13 @@
     border-color: #afb4ba !important;
 }
 
+.table .action-icon {
+    color: #98a6ad;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 0 3px;
+}
+
 label{
     font-weight: 600 !important;
     display: inline-block !important;

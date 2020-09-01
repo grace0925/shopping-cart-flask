@@ -5,7 +5,8 @@ from .models import db, Item
 
 @app.route("/", methods=['GET'])
 def home():
-    return render_template("index.html")
+    items = Item.query.all()
+    return render_template("index.html", items=items)
 
 
 @app.route("/add", methods=["GET", "POST"])
