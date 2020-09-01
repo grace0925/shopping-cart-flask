@@ -31,6 +31,31 @@ def add_item():
     return render_template("index.html")
 
 
+@app.route('/edit', methods=['GET', 'POST'])
+def edit_item():
+    if request.method == 'POST':
+        req = request.form
+
+        name = req["name"]
+        quantity = req["quantity"]
+        units = req["unit"]
+        item_id = int(req["id"])
+
+        unit_string = handle_unit(int(units))
+        print('id: ', item_id, 'name: ', name, ' quantity: ', quantity, ' unit: ', unit_string)
+
+        item = Item.query.get(item_id)
+        item.item_name = name
+        item.item_quantity = quantity
+        item.item_unit = unit_string
+
+        db.session.commit()
+        flash("Successfully updated item #")
+
+        return redirect(url_for('home'))
+    return render_template("index.html")
+
+
 def handle_unit(units):
     switcher = {
         1: 'kg',

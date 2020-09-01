@@ -107,11 +107,39 @@
     border-color: #afb4ba !important;
 }
 
+.table{
+    color: #6c757d !important;
+}
+
 .table .action-icon {
     color: #98a6ad;
     font-size: 1.2rem;
     display: inline-block;
     padding: 0 3px;
+}
+
+.table .action-icon:hover {
+    color: #6c777c ;
+}
+
+.table thead th {
+    vertical-align: bottom !important;
+    border-bottom: 2px solid #eef2f7 !important;
+}
+
+.table tbody tr {
+    vertical-align: bottom !important;
+    border: none !important;
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border: none !important;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #F1F3FA;
 }
 
 label{
@@ -128,4 +156,14 @@ body{
     line-height: 1.5 !important;
     color: #161616 !important;
     text-align: left !important;
+}
+
+table {
+    border-color: grey !important;
+    border-collapse: collapse !important;
+}
+
+th {
+    color: #6c757d !important;
+    border-top: 1px solid #eef2f7 !important;
 }
